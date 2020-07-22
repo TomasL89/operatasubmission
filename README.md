@@ -1,4 +1,4 @@
-# # Table of Contents
+# Table of Contents
 1. [Design decisions / Assumptions](#designDecision)
 2. [Testing Strategies](#testingStrategies)
 3. [Deployment / Automation Strategies](#deploymentStrategies)
