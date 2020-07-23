@@ -16,7 +16,7 @@
 
 The underlying Log Submission Portal was build with a .NET Core MVC architecture, this allowed for a quick development and deployment and meant that the web application can be easily enhanced for future work. MVC allows for a seperation of concerns with the components/logic and can be easily modified or debugged if required. The routing that is used in the Controller performed some basic validation on the POST submission of the Log Message, this sort of validation would include ensuring that the user inputs data into the fields and would prevent a user from creating a Service Ticket Log if it is invalid. 
 
-![Invalid Submission](/assets/Invalid%20Submission.PNG)
+![Invalid Submission](/doc/Invalid%20Submission.PNG)
 
 #### S3 Bucket Integration
 ###### AWS SDK for .NET
