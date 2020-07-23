@@ -38,11 +38,9 @@ To handle the upload of a new Log File from the Log Submission Portal the Bucket
 To notify a service manager about a new Log File that has been submitted, a simple Python lambda function was created to extract the S3 Object Key name from the event data. That Object Key name would be used as part of the message body for the Twilio function. The script will attempt to POST a message to the Twilio account that contains the Service Managers mobile number. An example of the message would be "New log message with subject: " + [KeyName]
 A Lambda Python function was used for simplicity purposes and to reduce the cost of hosting that functionality, there is no need to run a virtual machine 24/7 for this particular function.
 
-
 #### c. Twilio
 
 As per the specification Twilio was used as the SMS notification functionality, it offers a simple rest API that accomodates messages being sent to a url.
-
 
 ---
 
