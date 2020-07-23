@@ -12,7 +12,7 @@
 
 ##### Web Framework
 
-###### <span></span> ASP.NET Core MVC Web Application 
+###### ASP.NET Core MVC Web Application 
 
 The underlying Log Submission Portal was build with a .NET Core MVC architecture, this allowed for a quick development and deployment and meant that the web application can be easily enhanced for future work. MVC allows for a seperation of concerns with the components/logic and can be easily modified or debugged if required. The routing that is used in the Controller performed some basic validation on the POST submission of the Log Message, this sort of validation would include ensuring that the user inputs data into the fields and would prevent a user from creating a Service Ticket Log if it is invalid. 
 
@@ -79,8 +79,18 @@ It might be possible to implement a form of automated unit testing on the Python
 <a name="operationSupport"></a>
 ## 4. Operation Support Considerations
 
+#### a. ASP.NET Core MVC Web Application 
+Issues relating to the Log Submission Portal would rely on a seperate issue tracking system, potentially an internal based system used by testers and an external used by customers. Those issues can then be assessed by a developer and then addressed if required.
+
+Feature requests could also be handled internally and externally, a Product Owner who might want to implement a new feature for a future release cycle could submit proposals to an internal request board (Jira or Trello). A similiar system could be implemented for external feature reqests.
+
+#### b. Amazon S3
+
+#### c. Amazon Lambda
+
+#### d. Twilio
 ---
 
 <a name="issuesEncounted"></a>
 ## 5. Issues Encounted
-
+The Amazons S3 Bucket was the biggest issue encountered for this piece of work, determining how to get IAM credentials working for the .NET integration required a significant chunk of time in order to upload a file. This was a result of not being experienced with that component. As previously mentioned, a sample application was written for testing and education purposes. Thankfully there is a lot of documentation available for .NET integration of the S3 Bucket component and this very helpful to get that part of the system working.   
