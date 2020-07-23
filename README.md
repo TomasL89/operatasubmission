@@ -23,7 +23,10 @@ The underlying Log Submission Portal was build with a .NET Core MVC architecture
 
 Amazon offers an easy to use SDK for integrating the Amazon S3 service to the Log Submission Portal, this allowed for a quick development turnaround for this portal and the uploading of a Log Ticket could be handled on the Server Side of the application. Seperating this function meant that it could be prototyped as a simple program first to ensure that it was possible to upload a file to the S3 Bucket and once that was confirmed, then it could be integrated into the web application. The Subject field is used as a the Key for the Amazon S3 Object, this is used later as part of the message body for the SMS notification function.
 
+#### Azure App Service
+##### Hosting service for Log Submission Portal
 
+Azure was chosen as it was quick and efficient to publish to from Visual Studio allowing for a quick turn around. 
 
 #### b. Amazon S3 Bucket
 ###### Events
@@ -46,12 +49,30 @@ As per the specification Twilio was used as the SMS notification functionality, 
 <a name="testingStrategies"></a>
 ## 2. Testing Strategies
 
+#### a. S3 Bucket
+##### i. .NET Core Component
+To develop the solution for this, a small program was used to quickly test that the Amazon SDK was working as expectecd when trying to upload a sample log file.
+
+##### ii. Lambda Event Handler
+The first test performed was to ensure the script would send a set message through the Twilio API url, a "Hello World" style test was done. The second test involved using the inbuilt test functionality of the Python Lamdba tool, this had a JSON object that could be parsed in and this allowed for seperate unit testing of that script. The third test involved using the small program that was developed for the S3 functionality and test that an SMS notification would be generated upon a test Log file being uploaded. 
+
+##### iii. Twilio SMS Notification
+Another .NET program was used to push a message to the Twilio API, this was a quick way to test that the account was working and that the phone number used for the tests would receive the messages.
+
+##### b. ASP.NET Core MVC Web Application 
+During development of the web application simple user tests were performed, this included inputting incorrect data to the fields of the form, and testing the error page would display if the S3 bucket had failed.
 
 ---
 
 <a name="deploymentStrategies"></a>
 ## 3. Deployment / Automation Strategies
 
+#### a. S3 Bucket 
+##### i. .NET Core Component
+Unit testing could be implemented here for basic functionality such as the JSON parser to ensure the results were as expected. Integration testing could be used to check the integrity of the files being uploaded. An example might be to Upload a file, download that file and compare the fields.
+
+##### ii. Lambda 
+It might be possible to implement a form of automated unit testing on the Python script used to handle the event trigger, this would require further research and work.
 
 ---
 
