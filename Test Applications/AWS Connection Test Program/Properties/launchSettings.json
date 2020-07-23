@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "AWSConnection": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AWS_REGION": " ap-southeast-2",
+        "AWS_PROFILE": "Support"
+      }
+    }
+  }
+}
